@@ -1,2 +1,2 @@
 #!/bin/bash
-head --lines=[3]N iacta
+tail -n 2 iacta
