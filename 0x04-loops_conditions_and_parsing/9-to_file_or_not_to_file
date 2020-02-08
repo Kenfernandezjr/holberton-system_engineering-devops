@@ -10,9 +10,9 @@ then
    fi
    if [ -s "holbertonschool" ]
    then
-	echo "holbertonschool file is empty"
-   else
 	echo "holbertonschool file is not empty"
+   else
+	echo "holbertonschool file is empty"
    fi
 else
    echo "holbertonschool file does not exist"
