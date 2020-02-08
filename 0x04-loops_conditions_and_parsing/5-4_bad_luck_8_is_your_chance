@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# displaying "Holberton School"  "bad luck" 4 slot "good luck" 8 slot
+
+n=1
+while (( n <= 8 ))
+do
+    echo "Holberton School"
+    n=$(( n+1 ))
+    if [ "$n" -eq 4 ]
+    then
+        echo "bad luck"
+    elif [ "$n" -eq 7 ]
+    then
+	echo "good luck"
+    fi
+done
