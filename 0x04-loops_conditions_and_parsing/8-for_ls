@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# display current directory in a list format
+
+for n in *
+do
+    echo "$n" | cut -d "-" -f2
+done
