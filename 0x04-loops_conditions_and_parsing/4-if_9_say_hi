@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# This script is displaying "Holberton School" and "Hi" the 9th time
+
+n=1
+while (( n <= 9 ))
+do
+    echo "Holberton School"
+    n=$(( n+1 ))
+    if [[ "$n" -eq 9 ]]
+    then
+	echo "Hi"
+    fi
+done
