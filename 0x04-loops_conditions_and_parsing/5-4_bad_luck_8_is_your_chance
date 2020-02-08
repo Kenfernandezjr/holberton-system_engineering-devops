@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 # displaying "Holberton School"  "bad luck" 4 slot "good luck" 8 slot
 
-n=0
-while (( $n <= 9 ))
+n=1
+while (( $n <= 10 ))
 do
     n=$(( n+1 ))
-    if [ "$n" -eq 4 ]
+    if [ "$n" -eq 5 ]
     then
         echo "bad luck"
-    elif [ "$n" -eq 8 ]
+    elif [ "$n" -eq 9 ]
     then
 	echo "good luck"
     else
