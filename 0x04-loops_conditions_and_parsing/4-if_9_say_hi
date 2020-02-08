@@ -2,11 +2,11 @@
 # This script is displaying "Holberton School" and "Hi" the 9th time
 
 n=1
-while (( n <= 9 ))
+while (( n <= 10 ))
 do
     echo "Holberton School"
-    let n++
-    if [ "$n" -eq 9 ]
+    n=$(( n+1 ))
+    if [ "$n" -eq 10 ]
     then
 	echo "Hi"
     fi
