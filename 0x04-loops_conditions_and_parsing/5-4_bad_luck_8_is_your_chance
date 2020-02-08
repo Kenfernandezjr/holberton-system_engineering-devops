@@ -2,7 +2,7 @@
 # displaying "Holberton School"  "bad luck" 4 slot "good luck" 8 slot
 
 n=0
-while (( $n < 10 ))
+while (( n < 10 ))
 do
     n=$(( n+1 ))
     if [ "$n" -eq 4 ]
