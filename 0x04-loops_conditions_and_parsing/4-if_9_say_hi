@@ -5,8 +5,8 @@ n=1
 while (( n <= 9 ))
 do
     echo "Holberton School"
-    n=$(( n+1 ))
-    if [[ "$n" -eq 9 ]]
+    let n++
+    if [ "$n" -eq 9 ]
     then
 	echo "Hi"
     fi
