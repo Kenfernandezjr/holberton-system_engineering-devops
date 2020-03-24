@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# this will allow me to connect to my server
+ssh -i ~/.ssh/holberton unbuntu@34.74.97.250
