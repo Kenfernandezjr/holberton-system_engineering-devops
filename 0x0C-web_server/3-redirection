@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# 301 moved Permanently
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+sudo service nginx start
+new_string="Location {\nrewrite ^/(.*)$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;\n}"
+sudo sed -i "301 $new_string" /etc/nginx/sites-available/default
+sudo service nginx restart
