@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# 301 moved Permanently
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+new_string="\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
+sudo sed -i "42i $new_string" /etc/nginx/sites-available/default
+echo "Ceci n'est pas une page" > /var/www/html/xyzfoo
+error="\\\terror_page 404 ^/xyz;\nlocation = ^/xyz {\nroot /var/www/html; \ninternal;\n}"
+sudo sed -i "43i $error" /etc/nginx/sites-available/default
+sudo service nginx start
