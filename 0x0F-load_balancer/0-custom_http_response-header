@@ -4,6 +4,6 @@ sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
 directfile="/etc/nginx/sites-available/default"
-sudo sed -i "40i \\\t# shellcheck disable=SC2154" $directfile
+sudo sed -i "40i \\\thexToAscii() {\n# shellcheck disable=SC2154\n}" $directfile
 sudo sed -i "42i \\\tadd_header X-Served-By $HOSTNAME;\n" $directfile
 sudo service nginx start
