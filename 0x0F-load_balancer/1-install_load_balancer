@@ -13,5 +13,16 @@ backend http_behind
 \toption forwardfor
 \tserver 1047-web-01 34.74.97.250:80 check
 \tserver 1047-web-02 34.234.79.159:80 check"
-sudo sed -i "$inserting" /etc/haproxy/haproxy.cfg
+sudo sed -i "a\$inserting" /etc/haproxy/haproxy.cfg
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+new_string="\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlw$
+sudo sed -i "42i $new_string" /etc/nginx/sites-available/default
+error="\\\terror_page 404 ^/custom_404.html;\nlocation = ^/xyz {\nroot /var/www$
+sudo sed -i "43i $error" /etc/nginx/sites-available/default
+echo "Ceci n'est pas une page" > /var/www/html/custom_404.html
+directfile="/etc/nginx/sites-available/default"
+sudo sed -i "42i \\\tadd_header X-Served-By $HOSTNAME;\n" $directfile
 sudo service haproxy start
