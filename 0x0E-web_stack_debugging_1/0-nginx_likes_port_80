@@ -2,4 +2,4 @@
 #script to change ports
 
 sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-sudo service start
+sudo service nginx start
