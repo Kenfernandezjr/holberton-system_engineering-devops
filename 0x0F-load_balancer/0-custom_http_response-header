@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#script to configure custom http
+sudo apt-get -y update
+sudo apt-get -y install nginx
+directfile="/etc/nginx/sites-available/default"
+sudo sed -i "42i \\\t add_header X-Served-By $HOSTNAME;\n" $directfile
+sudo service nginx start
