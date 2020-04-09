@@ -1,0 +1,10 @@
+#!/bin/bash
+# Port_forwarding for ufw
+sudo ufw allow 80/tcp
+pfoward="*nat
+:PREROUTING ACCEPT [0:0]
+-A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80
+COMMIT"
+echo "$pfoward" | sudo tee -a /etc/ufw/before.rules
+sudo service ufw restart
+sudo ufw enable
