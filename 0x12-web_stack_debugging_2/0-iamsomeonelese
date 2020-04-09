@@ -1,3 +1,3 @@
-#!/bin/bash
-# someoneelse with using whoami command
+#!/usr/bin/env bash
+#someoneelse with using whoami command
 sudo -u "$1" whoami
