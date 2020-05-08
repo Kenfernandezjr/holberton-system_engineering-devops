@@ -13,4 +13,4 @@ def top_ten(subreddit):
         for index in response.json()['data']['children']:
             print(index['data']['title'])
     except Exception:
-        return None
+        print (None)
