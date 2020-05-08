@@ -5,7 +5,7 @@ import requests
 
 
 def top_ten(subreddit):
-    url = 'https://reddit.com/r/{}/top/.json?limit=10'.format(subreddit)
+    url = 'https://reddit.com/r/{}/hot.json?limit=10'.format(subreddit)
     headers = {'user-agent': 'Taskrabbitpower'}
     response = requests.get(url, headers=headers)
 
